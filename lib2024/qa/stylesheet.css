@@ -1,12 +1,10 @@
 html body{
-    width:90%;
     margin:10px;
-    padding:50px;
+    padding:70px;
 }
 
 #header {
-    width:95%;
-    overflow:hidden;
+    overflow: auto;
     height:100px;
     padding: 5px;
     border: 5px solid black;
@@ -14,7 +12,7 @@ html body{
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 1.5em;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -25,18 +23,15 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-}
-
-.text-column{
-    width:50%;
-    padding: 0 10px;  
+ --R:15vw; /* radius */
+ --m:2vw;   /* margin */
+    --t:1.5vw;  /* distance from top */
 }
 
 .logo{
-    width: 30%;
-    float: left;
-    shape-outside: circle(50%);
+  width: 50%;
+  float: left;
+  shape-outside: circle(50%);
 }
 
 .center-image {
@@ -49,32 +44,28 @@ h1 {
 
 .container{
     display: flex;
-    grid-template-columns: auto auto;
-    grid-gap:  30px;
     flex-wrap: wrap;
+    justify-content: space-around;
     background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(162, 222, 242, 0.5));
-    padding: 50px;
-    margin: 80px 10px 10px 10px;
+    grid-gap:  3em;
+    padding: 2.5vw;
+    margin: 5vw 1vw;
     box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
 }
 
 #item{
+    display: inline-block;
     background: white;
     text-align: center;
-    padding: 60px 80px;
-    display: inline-block;
-    width:  200px;
-    height: 180px;   
-    font-size: 25px;
+    padding: 4vw;
+    width:  28vw;
+    height: 25vw;   
+    font-size: 1.5em;
 }
 
-.divider {
-    border-left: 8px solid #190d0d;
-    padding-left: 10px;
-  }
 
-  hr.dashed {
-    border-top: 3px dashed #bbb;
+ hr.dashed {
+    border-top: 0.5vw dashed #9613ce;
   }
 
   .watermark{
@@ -85,5 +76,45 @@ h1 {
     left: 0;
     width: 100%;
     height: 50%;
-    clip-path: polygon(8% 0, 91% 0, 100% 68%, 48% 100%, 0 64%);
+    -webkit-clip-path: polygon(92% 0, 100% 22%, 100% 37%, 75% 100%, 27% 100%, 0 23%, 9% 0);
+    clip-path: polygon(92% 0, 100% 22%, 100% 37%, 75% 100%, 27% 100%, 0 23%, 9% 0); 
   }
+
+  .article p {
+    width: 50%;
+    margin:0;
+    padding:0 var(--m);
+    display: inline-block;
+    vertical-align:top;
+    font-size: initial;
+    text-align: justify;
+  }
+  
+   .article p:before {
+    content: "";
+    width: var(--R);
+    height: calc(2*var(--R));
+    padding:var(--m) 0 var(--m) var(--m);
+    margin-top:var(--t);
+    background:url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/book%20icon.png) content-box;
+    background-size:200% 100%;
+    shape-outside: circle(var(--R) at var(--d,right) calc(-1*var(--m)) top calc(50% + var(--t)/2));
+    float: right;
+    border-radius: 500px 0 0 500px;
+    margin-right:calc(-1*var(--m));
+  }
+  
+  .article p:last-child:before {
+    float: left;
+    padding:var(--m) var(--m) var(--m) 0;
+    --d:left;
+    background-position:right;
+    border-radius:0 500px 500px 0;
+    margin-left:calc(-1*var(--m));
+    margin-right:0;
+  }
+  
+  *,*::before,*::after {
+    box-sizing:border-box;
+  }
+
