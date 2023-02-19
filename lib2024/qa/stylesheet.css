@@ -1,0 +1,73 @@
+html body{
+    width:90%;
+    margin:10px;
+    padding:50px;
+}
+
+#header {
+    width:95%;
+    overflow:hidden;
+    height:100px;
+    padding: 5px;
+    border: 5px solid black;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+.article{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-column{
+    width:50%;
+    padding: 0 10px;  
+}
+
+.logo{
+    width: 30%;
+    float: left;
+    shape-outside: circle(50%);
+}
+
+.center-image {
+    display: block;
+    margin: auto;
+    width: 30%;
+    height: auto;
+  }
+
+.container{
+    display: flex;
+    grid-template-columns: auto auto;
+    grid-gap:  30px;
+    flex-wrap: wrap;
+    background-color: lightblue;
+    padding: 50px;
+    margin: 80px 10px 10px 10px;
+}
+
+#item{
+    background: white;
+    text-align: center;
+    padding: 60px 80px;
+    display: inline-block;
+    width:  200px;
+    height: 180px;   
+    font-size: 25px;
+}
+
+
+
+
+
+
