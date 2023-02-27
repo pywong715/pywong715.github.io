@@ -1,14 +1,17 @@
 html body{
     margin:10px;
     padding:70px;
+    background-image: linear-gradient(rgba(224, 228, 136, 0.774), rgba(222, 210, 168, 0.5));
 }
 
-#header {
-    overflow: auto;
+.title{
+    width: 100%;
+    overflow: hidden;
     height:100px;
-    padding: 5px;
+    padding: 2px;
     border: 5px solid black;
     margin: 5px;
+    position: relative;
 }
 
 h1 {
@@ -23,98 +26,100 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
- --R:15vw; /* radius */
- --m:2vw;   /* margin */
-    --t:1.5vw;  /* distance from top */
+  --R:200px; /* radius */
+  --m:40px;   /* margin */
+  --t:20px;  /* distance from top */
 }
 
-.logo{
+.article p {
   width: 50%;
-  float: left;
-  shape-outside: circle(50%);
+  margin:0;
+  padding:0 var(--m);
+  display: inline-block;
+  vertical-align:top;
+  font-size: initial;
+  text-align: justify;
 }
 
-.center-image {
-    position: relative;
-    display: block;
-    margin: auto;
-    width: 30%;
-    height: auto;
+ .article p:before {
+  content: "";
+  width: var(--R);
+  height: calc(2*var(--R));
+  padding:var(--m) 0 var(--m) var(--m);
+  margin-top:var(--t);
+  background:url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/book%20icon.png) content-box;
+  background-size:200% 100%;
+  shape-outside: circle(var(--R) at var(--d,right) calc(-1*var(--m)) top calc(50% + var(--t)/2));
+  float: right;
+  border-radius: 500px 0 0 500px;
+  margin-right:calc(-1*var(--m));
+}
+
+.article p:last-child:before {
+  float: left;
+  padding:var(--m) var(--m) var(--m) 0;
+  --d:left;
+  background-position:right;
+  border-radius:0 500px 500px 0;
+  margin-left:calc(-1*var(--m));
+  margin-right:0;
+}
+
+*,*::before,*::after {
+  box-sizing:border-box;
+}
+
+
+hr.dashed {
+  border-top: 10px dashed #9613ce;
   }
 
 .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(162, 222, 242, 0.5));
-    grid-gap:  3em;
-    padding: 2.5vw;
-    margin: 5vw 1vw;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    background-image: linear-gradient(rgba(216, 97, 54, 0.5), rgba(215, 182, 66, 0.5));
+    grid-gap: 20px;
+    padding:  30px;
+    margin: 80px 10px 10px 10px;
+    box-shadow: 12px 12px 2px 1px rgba(225, 125, 10, 0.2);
 }
 
-#item{
-    display: inline-block;
-    background: white;
-    text-align: center;
-    padding: 4vw;
-    width:  28vw;
-    height: 25vw;   
-    font-size: 1.5em;
-}
-
-
- hr.dashed {
-    border-top: 0.5vw dashed #9613ce;
-  }
-
-  .watermark{
+#item img{
     position: absolute;
-    background-image: url('https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/watermarkbw.png');
-    opacity: 0.5; 
-    top: 100;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    -webkit-clip-path: polygon(92% 0, 100% 22%, 100% 37%, 75% 100%, 27% 100%, 0 23%, 9% 0);
-    clip-path: polygon(92% 0, 100% 22%, 100% 37%, 75% 100%, 27% 100%, 0 23%, 9% 0); 
-  }
+}
 
-  .article p {
-    width: 50%;
-    margin:0;
-    padding:0 var(--m);
-    display: inline-block;
-    vertical-align:top;
-    font-size: initial;
-    text-align: justify;
-  }
-  
-   .article p:before {
-    content: "";
-    width: var(--R);
-    height: calc(2*var(--R));
-    padding:var(--m) 0 var(--m) var(--m);
-    margin-top:var(--t);
-    background:url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/book%20icon.png) content-box;
-    background-size:200% 100%;
-    shape-outside: circle(var(--R) at var(--d,right) calc(-1*var(--m)) top calc(50% + var(--t)/2));
-    float: right;
-    border-radius: 500px 0 0 500px;
-    margin-right:calc(-1*var(--m));
-  }
-  
-  .article p:last-child:before {
-    float: left;
-    padding:var(--m) var(--m) var(--m) 0;
-    --d:left;
-    background-position:right;
-    border-radius:0 500px 500px 0;
-    margin-left:calc(-1*var(--m));
-    margin-right:0;
-  }
-  
-  *,*::before,*::after {
-    box-sizing:border-box;
-  }
+.box{
+    width: 100%;
+    overflow: hidden;
+    height:800px;
+    margin: 20px;
+    position: relative;
+    padding: 5px;
+}
+
+#watermark::after {
+  content:"BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW W BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BWW BW BW BW BW BW BW BW BW BW BW BW BW" ;
+  position: absolute;
+  width: auto;
+  transform: rotate(350deg);
+  opacity: 0.3;
+  color: #ffffffbd;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: justify;
+}
+
+#center-image {
+  object-position: center;
+  position: relative;
+  margin: auto ;
+  height: auto;
+  width: 80%;
+  padding: 20px 200px 200px 200px;
+}
+
+
+
+
 
