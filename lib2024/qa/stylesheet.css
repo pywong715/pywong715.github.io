@@ -69,7 +69,6 @@ h1 {
   box-sizing:border-box;
 }
 
-
 hr.dashed {
   border-top: 10px dashed #9613ce;
   }
@@ -93,7 +92,7 @@ hr.dashed {
     width: 100%;
     overflow: hidden;
     height: auto;
-    margin: 0 auto;
+    margin: 30px 10px auto;
     position: relative;
 }
 
