@@ -92,13 +92,31 @@ hr.dashed {
 .box{
     width: 100%;
     overflow: hidden;
-    height:800px;
-    margin: 20px;
+    height: auto;
+    margin: 0 auto;
     position: relative;
-    padding: 5px;
 }
 
-#watermark::after {
+.box img{
+  position: relative;
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+  height: auto;
+  width: auto;
+  padding: 20px 80px 100px 80px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 760px) {
+  header h1 {
+    font-size: 0.95em;
+  }
+  .article p {
+    font-size: 0.9em;
+  }
+}
+
+#watermark::before {
   content:"BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW W BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BWW BW BW BW BW BW BW BW BW BW BW BW BW" ;
   position: absolute;
   width: auto;
@@ -110,14 +128,7 @@ hr.dashed {
   text-align: justify;
 }
 
-#center-image {
-  object-position: center;
-  position: relative;
-  margin: auto ;
-  height: auto;
-  width: 80%;
-  padding: 20px 200px 200px 200px;
-}
+
 
 
 
