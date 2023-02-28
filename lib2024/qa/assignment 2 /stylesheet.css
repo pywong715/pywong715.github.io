@@ -11,20 +11,20 @@ html body{
     padding: 2px;
     border: 5px solid black;
     margin: 5px;
-    position: relative;
+    position: relative; 
 }
 
 h1 {
     font-size: 1.5em;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: uppercase; /* capitalize the title */
     text-align: center;
     font-family: "Times New Roman", Times, serif;
   }
 
 .article{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* the text will display horizontally */
     justify-content: center;
   --R:200px; /* radius */
   --m:40px;   /* margin */
@@ -50,13 +50,13 @@ h1 {
   background:url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/book%20icon.png) content-box;
   background-size:200% 100%;
   shape-outside: circle(var(--R) at var(--d,right) calc(-1*var(--m)) top calc(50% + var(--t)/2));
-  float: right;
+  float: right;  /* the <p id ="left"> will float to the right side of the background image */
   border-radius: 500px 0 0 500px;
   margin-right:calc(-1*var(--m));
 }
 
 .article p:last-child:before {
-  float: left;
+  float: left; /* the <p id ="right"> will float to the left side of the background image */
   padding:var(--m) var(--m) var(--m) 0;
   --d:left;
   background-position:right;
@@ -70,12 +70,12 @@ h1 {
 }
 
 hr.dashed {
-  border-top: 10px dashed #9613ce;
+  border-top: 10px dashed #9613ce; /* a dashed  divider between the watermark and image container */
   }
 
-.container{
-    display: flex;
-    flex-wrap: wrap;
+.image-container{
+    display: flex; 
+    flex-wrap: wrap; 
     justify-content: space-around;
     background-image: linear-gradient(rgba(216, 97, 54, 0.5), rgba(215, 182, 66, 0.5));
     grid-gap: 20px;
@@ -84,47 +84,47 @@ hr.dashed {
     box-shadow: 12px 12px 2px 1px rgba(225, 125, 10, 0.2);
 }
 
-#item img{
+#image img{
     position: absolute;
 }
 
-.box{
+.watermark-box{
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* the watermarks will remain contained within the watermark-box  */
     height: auto;
     margin: 30px 10px auto;
     position: relative;
 }
 
-.box img{
+.watermark-box img{
   position: relative;
   display: block;
   max-width: 100%;
   margin: 0 auto;
   height: auto;
   width: auto;
-  padding: 20px 80px 100px 80px;
-}
-
-@media screen and (min-width: 480px) and (max-width: 760px) {
-  header h1 {
-    font-size: 0.95em;
-  }
-  .article p {
-    font-size: 0.9em;
-  }
+  padding: 20px 80px 100px 80px; 
 }
 
 #watermark::before {
   content:"BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW W BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BW BWW BW BW BW BW BW BW BW BW BW BW BW BW" ;
   position: absolute;
   width: auto;
-  transform: rotate(350deg);
-  opacity: 0.3;
+  transform: rotate(350deg); /* the watermarks is rotated by 350 degrees */
+  opacity: 0.3; /* the lower opacity the more transparent of the watermarks will be */
   color: #ffffffbd;
   font-size: 3em;
-  font-weight: bold;
+  font-weight: bold; /* the watermarks will be in bold font */
   text-align: justify;
+}
+
+@media screen and (min-width: 480px) and (max-width: 760px) { /* font size will be responsive to users' screen size*/
+  header h1 {
+    font-size: 0.95em;
+  }
+  .article p {
+    font-size: 0.9em;
+  }
 }
 
 
