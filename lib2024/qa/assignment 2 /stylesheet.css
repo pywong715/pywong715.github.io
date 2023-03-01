@@ -70,7 +70,7 @@ h1 {
 }
 
 hr.dashed {
-  border-top: 10px dashed #9613ce; /* a dashed  divider between the watermark and image container */
+  border-top: 10px dashed #9613ce; /* a dashed divider is created between the watermark and image container */
   }
 
 .image-container{
@@ -111,7 +111,7 @@ hr.dashed {
   position: absolute;
   width: auto;
   transform: rotate(350deg); /* the watermarks is rotated by 350 degrees */
-  opacity: 0.3; /* the lower opacity the more transparent of the watermarks will be */
+  opacity: 0.3; /* the lower the opacity is, the more transparent the watermarks will be */
   color: #ffffffbd;
   font-size: 3em;
   font-weight: bold; /* the watermarks will be in bold font */
