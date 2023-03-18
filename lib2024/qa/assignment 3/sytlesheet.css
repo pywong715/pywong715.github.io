@@ -2,7 +2,6 @@
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;500&display=swap');
 
-
 html{
   background: #F3F7F3;
 }
@@ -52,7 +51,7 @@ h2{
     max-width: 100%;
     display: block;
     background-color: white;
-    background-image: url("img/center-image.jpeg");
+    background-image: url("https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/assignment%203/img/center-image.jpeg");
     background-size: cover; 
     border-radius: 12px 12px 0 0 ;
 }
@@ -71,10 +70,9 @@ h2{
   max-width: 70%;
   margin: 0 auto;    
   text-align: center;    
-  padding: 15px;
   display: block;
   border-radius: 12px;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .info-box{
@@ -135,6 +133,7 @@ h2{
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   margin-top: 10%;
   margin-left: 35%;
+  position: relative;
 }
 
 .bookstore h2:hover{
@@ -175,23 +174,22 @@ h2{
   color: white;
   font-family: 'Courier New', Courier, monospace;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.25s;
+  transition: 0.25s;
 }
 
 .inside-bs-overlay > *{
- transform: translateY(20px);
- transition: transform 0.25s;
-}
+  transform: translateY(20px);
+  transition: 0.25s;
+ }
 
-.inside-bs-overlay:hover{
+ .inside-bs-overlay:hover{
   opacity: 1;
 }
 
-.inside-bs-overlay:hover > *{
+ .inside-bs-overlay:hover > *{
   transform: translateY(0);
 }
 
@@ -224,32 +222,30 @@ footer {
 .greeting {
   position: relative;
   top: 8.5vmin;
-  animation: white-out 14s infinite;
   margin: 0;
   font-size: 28px;
   padding: 2px;
 }
 
-.en {
+.jp {
   color: #fa8231;
 }
 
-.es {
+.mo {
   color: white;
 }
 
-.et {
+.tob {
   color: #FF66B3;
 }
 
-.eh{
+.hc{
   color:#182825;
 }
 
 @keyframes move {
   25% {
     transform: translatey(-1vmin);
-    opacity: 1;
   }
   50% {
     transform: translatey(-11vmin);
@@ -263,27 +259,24 @@ footer {
   header h1 {
     font-size: 0.95em;
   }
-  .article p {
-    font-size: 0.6em;
-  }
-  .footer{
-    height:50vh;
-    padding: 40px;
-  }
   .title img {
     width: 15%;
   }
   .center-image {
     height: 150px;
   }
+  .article p {
+    font-size: 0.5em;
+  }
   .bookstore p{
-    font-size: 0.4em;
+    font-size: 0.3em;
+    line-height:1;
   }
   .bookstore h2{
     font-size: 0.5em;
   }
   .more-info{
-    font-size: 0.7em;
+    font-size: 0.1em;
   }
   .greeting {
     font-size: 10px;
@@ -296,4 +289,5 @@ footer {
  }
 .line{
   background: aqua;
+}
 }
