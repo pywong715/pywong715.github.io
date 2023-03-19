@@ -26,7 +26,7 @@ p{
   margin-right: 20px;
 }
 
-.title img:hover {
+.title img:hover { /* the image will be fliped to another side when users hover over it */
     transform: scaleX(-1);
 }
 
@@ -85,15 +85,15 @@ h2{
 }
 
 
-.info-box:nth-child(1), .info-box:nth-child(3) {
+.info-box:nth-child(1), .info-box:nth-child(3) { 
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* the images of first and third info-box are on the left as default*/
   padding: 10px;
 }
 
-.info-box:nth-child(2), .info-box:nth-child(4) {
+.info-box:nth-child(2), .info-box:nth-child(4) { 
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse; /* the images of first and third info-box are on the right */
   padding: 10px;
 }
 
@@ -136,12 +136,12 @@ h2{
   position: relative;
 }
 
-.bookstore h2:hover{
+.bookstore h2:hover{ /* when users hover over h2, there will be textshadow on h2 */
   color: #DE9B68;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.more-info:hover {
+.more-info:hover {  /* when users hover over the button, the background colour of the button changes*/
     background-color: #182825;
 }
 
@@ -164,7 +164,7 @@ h2{
   box-shadow: rgba(231, 167, 18, 0.25) 0px 54px 55px, rgba(234, 195, 95, 0.12) 0px -12px 30px, rgba(210, 228, 74, 0.12) 0px 4px 6px, rgba(202, 209, 24, 0.17) 0px 12px 13px, rgba(184, 227, 72, 0.09) 0px -3px 5px;
 }
 
-.inside-bs-overlay{
+.inside-bs-overlay{ /* an overlay is added to the bookstore images*/
   position: absolute;
   top:0;
   left: 0;
@@ -180,7 +180,7 @@ h2{
   transition: 0.25s;
 }
 
-.inside-bs-overlay > *{
+.inside-bs-overlay > *{ /* the text of the overlayed image will be move from downward 20px*/
   transform: translateY(20px);
   transition: 0.25s;
  }
@@ -189,7 +189,7 @@ h2{
   opacity: 1;
 }
 
- .inside-bs-overlay:hover > *{
+ .inside-bs-overlay:hover > *{ /* after 0.25s, the text will be back to the orginal position*/
   transform: translateY(0);
 }
 
@@ -212,14 +212,14 @@ footer {
   overflow: hidden;
 }
 
-.string {
+.string { /* moving text with animation settings*/
   display: flex;
   flex-direction: column;
   text-align: center;
   animation: move 8s infinite;
 }
 
-.greeting {
+.greeting { 
   position: relative;
   top: 8.5vmin;
   margin: 0;
@@ -243,7 +243,7 @@ footer {
   color:#182825;
 }
 
-@keyframes move {
+@keyframes move { 
   25% {
     transform: translatey(-1vmin);
   }
