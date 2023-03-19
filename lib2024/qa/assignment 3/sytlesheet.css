@@ -161,7 +161,7 @@ h2{
   height: 500px;
   overflow: hidden;
   border-radius: 2%;
-  box-shadow: rgba(231, 167, 18, 0.25) 0px 54px 55px, rgba(234, 195, 95, 0.12) 0px -12px 30px, rgba(210, 228, 74, 0.12) 0px 4px 6px, rgba(202, 209, 24, 0.17) 0px 12px 13px, rgba(184, 227, 72, 0.09) 0px -3px 5px;
+  box-shadow: rgba(231, 167, 18, 0.25) 0px 54px 55px, rgba(235, 198, 105, 0.12) 0px -12px 30px, rgba(210, 228, 74, 0.12) 0px 4px 6px, rgba(202, 209, 24, 0.17) 0px 12px 13px, rgba(184, 227, 72, 0.09) 0px -3px 5px;
 }
 
 .inside-bs-overlay{ /* an overlay is added to the bookstore images*/
