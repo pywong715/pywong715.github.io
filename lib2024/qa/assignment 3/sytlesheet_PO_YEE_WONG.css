@@ -164,7 +164,7 @@ h2{
   box-shadow: rgba(231, 167, 18, 0.25) 0px 54px 55px, rgba(235, 198, 105, 0.12) 0px -12px 30px, rgba(210, 228, 74, 0.12) 0px 4px 6px, rgba(202, 209, 24, 0.17) 0px 12px 13px, rgba(184, 227, 72, 0.09) 0px -3px 5px;
 }
 
-.inside-bs-overlay{ /* an overlay is added to the bookstore images*/
+.inside-bs-overlay{ /* an overlay is added to the bookstore images, and the source of line 167 to 194 are cited in the report*/
   position: absolute;
   top:0;
   left: 0;
@@ -198,7 +198,7 @@ h2{
   font-weight: bold;
 }
 
-footer {
+footer { /* the source of line 201 to 256 are cited in the report*/
   background: #D5D6AA;
   font-size: 30px;
   font-family: JetBrains Mono, monospace;
