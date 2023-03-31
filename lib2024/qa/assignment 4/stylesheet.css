@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Source+Serif+Pro:ital,wght@1,900&display=swap');
+
+html{
+    background-color: #FDFAED;
+}
+
+/*font setting and animation effect on the main heading*/
+.main-title{
+    margin: 0 auto;
+    text-align: center;
+    width:100%;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  color: #70b2e5;
+  animation: color-change 10s ease-in-out infinite alternate;
+  font-size: 3.2em;
+  word-spacing: 20px;
+}
+@keyframes color-change {
+    0% {
+      color: #2E6171;
+    }
+    25% {
+      color: #556F7A;
+    }
+    50%{
+        color: #75B8C8;
+    }
+    75%{
+        color: #967AA1;
+    }
+    100%{
+        color: #829CD9;
+    }
+  }
+
+  .convert-container h2{
+    font-size: 1.2em;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 ;
+    margin: 0 auto;
+    max-width: 70%;
+  }
+
+  .therm-container {
+    flex: 0 0 10%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    }
+  
+  .thermometer{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  /*the height and main body of thermometer on the left hand side*/
+  .logo{
+      position: relative;
+      height: 520px;
+      width: 100px;
+  }
+  
+  /* the red bar of the thermometer*/
+  .bar{
+      z-index: 1;
+      height: 420px;
+      width: 40px;
+      background-color: #eaeaea;
+      border-radius: 25px 25px 0 0;
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+
+  /*the outside circle of the thermometer*/
+  .circle{
+    height: 100px;
+    width: 100px;
+    background-color: #eaeaea;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+}
+
+ /*the inside red circle of the thermometer*/
+.circle::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:60px;
+    border-radius: 50%;
+    background-color:#FA7775;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+/*animation of the moving bar of the thermometer in an linear form*/
+.bar::after{
+  content:"";
+  display:block;
+  height:360px;
+  width:20px;
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  bottom:-22px;
+  border-radius: 10px 10px 0 0;
+  background-color: #FA7775;
+  animation: anim 25s linear infinite ;
+}
+
+/*detail setting of the animation*/
+@keyframes anim{
+0%{
+    height: 5%;
+}
+70%{
+    height: 100%;
+}
+100%{
+    height: 5%;
+}
+}
+
+input {
+  display: block;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  color: #f4a55a;
+  font-family: 'Source Serif Pro', serif;
+  border-radius: 12px;
+}
+::-webkit-input-placeholder {
+   color: #ccc;
+}
+
+.convert-container {
+  flex: 0 0 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 18px;
+}
+
+.input-container-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ebc2c2;
+  padding: 0 100px 0 100px;
+  border-radius: 12px;
+}
+
+.input-container-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #90AFB6;
+  padding: 0 100px 0 100px;
+  border-radius: 12px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*animation effect when users hover over the arrow image between input-containers*/
+.arrow img {
+  max-width: 100%;
+  height: auto;
+  width: 12%; 
+  transition: transform 0.5s ease-in-out;
+}
+
+.arrow img:hover { 
+  transform: rotate(360deg);
+}
+
+.buttons{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  /*animation effects when users hover over the buttons. background and font colour will change*/
+  button {
+  padding: 18px;
+  font-size: 1em;
+  color: #545454;
+  border-radius: 20px;
+  font-family: 'Source Serif Pro', serif;
+  transition-duration: 0.7s;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#convert {
+  background-color: #7EC99D;
+  margin-left: 10%;
+  margin-right: 15%;
+}
+#convert:hover {
+  background-color: #303633;
+  color: white;
+}
+
+#clear{
+  background-color: #D5C6E0;
+}
+
+#clear:hover {
+  background-color: #303B73;
+  color: white;
+}
+
+.footer {
+  background-color: #FFC9AD;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  max-width: 100%;
+  font-size: 18px;
+  font-family: 'Source Serif Pro', serif;
+  padding: 1px;
+  border-radius: 10px;
+}
+
+.footer p {
+  word-spacing: 5px;
+}
+
+/* responsive design for different screen sizes, with three break points */
+@media (max-width: 768px) {
+  h1{
+    font-size: 2em;
+  }
+  .convert-container h2{
+    font-size: 0.9em;
+  }
+  .input-container-1 {
+    padding: 0 70px 0 70px;
+  }
+  .input-container-2 {
+    padding: 0 70px 0 70px;
+  }
+  .buttons {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+  }
+  button {
+    margin-top: 20px;
+  }
+  .thermometer {
+    height: 60%;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  .logo {
+    height: 200px;
+    width: 40px;
+  }
+  .bar {
+    height: 160px;
+    width: 20px;
+  }
+  .circle {
+    height: 40px;
+    width: 40px;
+  }
+  input{
+    font-size: 1em;
+  }
+  footer{
+    font-size: 5px;
+    padding: 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1{
+    font-size: 1.5em;
+  }
+  .convert-container h2{
+    font-size: 0.7em;
+  }
+  .input-container-1 {
+    padding: 0 30px 0 30px;
+  }
+  .input-container-2 {
+    padding: 0 30px 0 30px;
+  }
+  .buttons {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    font-size: 0.6em;
+  }
+  button {
+    margin-top: 10px;
+  }
+  #convert {
+    margin-left: 3%;
+    margin-right: 15%;
+  }
+  .thermometer {
+    height: 60%;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  .logo {
+    height: 200px;
+    width: 40px;
+  }
+  .bar {
+    height: 160px;
+    width: 20px;
+  }
+  .circle {
+    height: 40px;
+    width: 40px;
+  }
+  input{
+    font-size: 1em;
+  }
+  .footer p {
+    word-spacing: 3px;
+    font-size: 8px;
+  }
+}
+@media (max-width: 320px) {
+  h1{
+    font-size: 1em;
+  }
+  .convert-container h2{
+    font-size: 0.5em;
+  }
+  .input-container-1 {
+    padding: 0 25px 0 25px;
+  }
+  .input-container-2 {
+    padding: 0 25px 0 25px;
+  }
+  button {
+    font-size: 0.5em;
+  }
+  #convert {
+    margin-left: 3%;
+    margin-right: 10%;
+  }
+  .thermometer {
+    height: 60%;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  .logo {
+    height: 200px;
+    width: 40px;
+  }
+  .bar {
+    height: 160px;
+    width: 20px;
+  }
+  .circle {
+    height: 40px;
+    width: 40px;
+  }
+  input{
+    font-size: 1em;
+  }
+  .footer p {
+    word-spacing: 3px;
+    font-size: 5px;
+  }
+}
