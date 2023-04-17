@@ -1,0 +1,372 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400|Lora:400);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+/* Styling for the wrapper element, which acts as a container for the menu */
+.wrapper{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  transition: all 0.6s ease-in-out;
+}
+/* Moves the wrapper to the right by 0, making it visible */
+#active:checked ~ .wrapper{
+  right:0;
+}
+/* Styling for the list items within the wrapper element */
+.wrapper ul li{
+    height: auto;
+    margin: 15px 0;
+    white-space: nowrap;
+  }
+/* Styling for the links within the list items */
+  .wrapper ul li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 50px;
+    position: absolute;
+    line-height: 50px;
+    margin: 5px 30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    white-space: nowrap;
+    font-family: 'Dancing Script';
+  }
+/* Styling for the menu button */
+.menu-btn{
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+/* Styling for the three lines in the menu button */
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 5px solid #0d0c0c;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* Styling for the middle line in the menu button before it is clicked */
+.menu-btn:before{
+  transform: translateY(-8px);
+}
+/* Styling for the bottom line in the menu button before it is clicked */
+.menu-btn:after{
+  transform: translateY(8px);
+}
+/* Styling for the close element */
+.close {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: background .6s;
+}
+/* closing animation */
+#active:checked + .menu-btn span {
+    transform: scaleX(0);
+}
+#active:checked + .menu-btn:before {
+    transform: rotate(45deg);
+    border-color: #fff;
+}
+#active:checked + .menu-btn:after {
+    transform: rotate(-45deg);
+    border-color: #fff;
+}
+/* Styling for the meun when users open it */
+.wrapper ul{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  height: 10%;
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  border-radius: 50px;
+  position: absolute;
+  line-height: 50px;
+  margin: 5px 30px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* hover effect when users's cursors on the item */
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #1a73e8;
+}
+/*the meun button is shown as a box shape*/
+input[type="checkbox"]{
+  display: none;
+}
+#active:checked ~ .wrapper ul li a{
+  opacity: 1;
+}
+/*styling and animation effects when users click the box*/
+.wrapper ul li a{
+  transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateX(100px);
+}
+#active:checked ~ .wrapper ul li a{
+    transform: none;
+    transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); 
+   transition-delay: .6s;
+  transform: translateX(-100px);
+}
+/*basic styling setting of the html file*/
+html {
+	font: 400 1em/1.33 "Lora", serif;
+	background-color: #faebd7;
+}
+body {
+	padding-bottom: 3em;
+}
+/*styling setting of the picture on the left hand side*/
+.profile {
+	background: url("https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/final_img/inside.jpg") center 30%;
+	height: 50vh;
+	background-size: cover;
+}
+/*basic styling, including font size and colour of the main title and sub-title*/
+article {
+	color: #000;
+}
+header {
+	text-align: center;
+	padding: 0 2em;
+}
+h1 {
+	font-family: "Old Standard TT", serif;
+	color: #73BF00;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.nth-line-1,
+.nth-line-2 {
+	line-height: 1;
+	margin-right: 5%;;
+}
+.nth-line-1 {
+	font-size: 17vw;
+}
+.nth-line-2 {
+	font-size: 13.5vw;
+}
+.lead {
+	color: #000;
+	font-size: 1.5625em;
+	max-width: 20em;
+	margin: 0 auto;
+	text-align: center;
+}
+/*column setting of the article*/
+section {
+	-moz-column-width: 14em;
+	column-width: 14em;
+	-moz-column-gap: 1.33em;
+	column-gap: 1.33em;
+	padding: 0 1em;
+  text-align: justify;
+  text-justify: inter-word;
+
+}
+/*making the first letter of the article stand out*/
+section p:first-of-type:first-letter {
+	color: #73BF00;
+	float: left;
+	font-size: 7em;
+	line-height: 1;
+	margin-top: -0.2em;
+	margin-bottom: -0.2em;
+	margin-right: 0.1em;
+}
+/*setting of the code that stand out of the article*/
+blockquote {
+	border-left: 0.2em solid #73BF00;
+	font-size: 1.9em;
+	padding: 0.1em 0.5em;
+	line-height: 1.5;
+  text-align: center;
+	margin-left: 0;
+	margin-right: 0;
+	quotes: "“" "”" "‘" "’";
+}
+	blockquote::before, blockquote::after {
+		color: #73BF00;
+		font-size: 1.25em;
+		line-height: 0;
+	}
+	blockquote::before {
+		content: open-quote;
+	}
+	blockquote::after {
+		content: close-quote;
+	}
+/*setting of the two images on the right hand side*/
+img {
+	max-width: 100%;
+	margin-bottom: 1.33em;
+	vertical-align: middle;
+}
+.align-left {
+	float: left;
+	margin-right: 20px;
+}
+.align-right {
+	float: right;
+	margin-left: 20px;
+}
+/*making the images invisable first and then pop out when users scroll down*/
+.slide-in {
+	opacity: 0;
+	transition: all .5s;
+}
+.align-left.slide-in {
+	transform: translateX(-30%) scale(0.95);
+  border-radius: 30px;
+}
+.align-right.slide-in {
+	transform: translateX(30%) scale(0.95);
+  border-radius: 30px;
+}
+.slide-in.active {
+	opacity: 1;
+	transform: translateX(0%) scale(1);
+}
+
+/* Responsive styles for screens with a maximum width of 1280px */
+@media (min-width: 1280px) {
+	.profile {
+		width: 50%;
+	}
+}
+/* Responsive styles for screens with a maximum width of 880px */
+@media (min-width: 880px) {
+	article {
+		margin-left: 50%;
+	}
+	.profile {
+		width: 40%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		height: auto;
+	}
+  article {
+		margin-left: 40%;
+		position: relative;
+		max-width: 66em;
+	}
+  blockquote {
+		position: absolute;
+		right: 100%;
+		top: 80vh;
+		width: 8em;
+		background: rgba(250, 234, 214, .7);
+	}
+  .nth-line-1 {
+		font-size: 10.5vw;
+	}
+  .nth-line-2 {
+		font-size: 8vw;
+	}
+  section {
+		padding: 0 3em;
+	}
+  .p{
+    font-size: 1em;
+  }
+}
+/* Responsive styles for screens with a maximum width of 480px */
+@media (max-width: 480px){
+  img {
+    max-width: 80%;
+  }
+  .wrapper ul li a{
+    font-size: 20px;
+  }
+  .menu-btn{
+    height: 80px;
+    width: 80px;
+  }
+  blockquote,
+  blockquote::before, blockquote::after {
+    font-size: 1.5em;
+    line-height: 1;
+  }
+  .lead {
+    font-size: 1.3em;
+  }
+}
+/* Responsive styles for screens with a maximum width of 320px */
+@media (max-width: 320px) {
+  img {
+    max-width: 60%;
+  }
+  .wrapper ul li a{
+    font-size: 15px;
+  }
+  .menu-btn{
+    height: 80px;
+    width: 80px;
+  }
+  .nth-line-1 {
+		font-size: 9.5vw;
+	}
+  .nth-line-2 {
+		font-size: 7.5vw;
+	}
+  .lead {
+    font-size: 1.1em;
+  }
+}
+
+

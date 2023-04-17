@@ -1,0 +1,433 @@
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+/* Setting some default styles for all elements */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Dancing Script';
+}
+/* Styling for the wrapper element, which acts as a container for the menu */
+.wrapper{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  transition: all 0.6s ease-in-out;
+}
+/* Moves the wrapper to the right by 0, making it visible */
+#active:checked ~ .wrapper{
+  right:0;
+}
+/* Styling for the list items within the wrapper element */
+.wrapper ul li{
+    height: auto;
+    margin: 15px 0;
+    white-space: nowrap;
+  }
+/* Styling for the links within the list items */
+  .wrapper ul li a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 5px 30px;
+    color: #fff;
+    border-radius: 50px;
+    position: absolute;
+    line-height: 50px;
+    margin: 5px 30px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    white-space: nowrap;
+  }
+/* Styling for the menu button */
+.menu-btn{
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 20px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+/* Styling for the three lines in the menu button */
+.menu-btn span,
+.menu-btn:before,
+.menu-btn:after{
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 30%;
+    width: 40%;
+    border-bottom: 5px solid #0f0707;
+    transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* Styling for the middle line in the menu button before it is clicked */
+.menu-btn:before{
+  transform: translateY(-8px);
+}
+/* Styling for the bottom line in the menu button before it is clicked */
+.menu-btn:after{
+  transform: translateY(8px);
+}
+/* Styling for the close element */
+.close {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: background .6s;
+}
+/* closing animation */
+#active:checked + .menu-btn span {
+    transform: scaleX(0);
+}
+#active:checked + .menu-btn:before {
+    transform: rotate(45deg);
+  border-color: #fff;
+}
+#active:checked + .menu-btn:after {
+    transform: rotate(-45deg);
+  border-color: #fff;
+}
+/* Styling for the meun when users open it */
+.wrapper ul{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  height: 90%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+.wrapper ul li{
+  height: 10%;
+  margin: 15px 0;
+}
+.wrapper ul li a{
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  padding: 5px 30px;
+  color: #fff;
+  border-radius: 50px;
+  position: absolute;
+  line-height: 50px;
+  margin: 5px 30px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  transition: transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* hover effect when users's cursors on the item */
+.wrapper ul li a:after{
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 50px;
+  transform: scaleY(0);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+.wrapper ul li a:hover:after{
+  transform: scaleY(1);
+}
+.wrapper ul li a:hover{
+  color: #1a73e8;
+}
+/*the meun button is shown as a box shape*/
+input[type="checkbox"]{
+  display: none;
+}
+#active:checked ~ .wrapper ul li a{
+  opacity: 1;
+}
+/*styling and animation effects when users click the box*/
+.wrapper ul li a{
+  transition: opacity 1.2s, transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateX(100px);
+}
+#active:checked ~ .wrapper ul li a{
+    transform: none;
+    transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); 
+   transition-delay: .6s;
+  transform: translateX(-100px);
+}
+/*styling for three section's containers and set basic property of the section*/
+ .reviews {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+ }
+ .interview{
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+ }
+ .gallery{
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+ }
+ section{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  }
+  .title {
+    position: absolute;
+    top: 15%; 
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+  }
+  .title h1{
+    font-family: "Satisfy", serif;
+    font-size: 50px;
+    text-shadow: #FC0 1px 0 10px;
+  }  
+/*add background image for each section*/
+#sec-1{
+  background-image: url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/final_img/review_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#sec-2{
+  background-image: url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/final_img/interview_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#sec-3{
+  background-image: url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/final_img/gallery_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*styling for each cards in the sectiom*/
+figure.snip1220 {
+	font-family: 'Raleway', Arial, sans-serif;
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+	color: #ffffff;
+	text-align: left;
+	background-color: #07090c;
+	font-size: 16px;
+	-webkit-perspective: 50em;
+	perspective: 50em;
+	width: 280px;
+	height: 360px;
+	border-radius: 15px;
+	padding: 1.5rem;
+	display: flex;
+	align-items: flex-end;
+	transition: 0.4s ease-out;
+	box-shadow: 0px 7px 10px rgba(black, 0.5);
+  box-shadow: 5px 10px 18px rgb(242, 167, 75);
+}
+figure.snip1220 * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*styling the image on the cards*/
+figure.snip1220 img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 15px;
+}
+/*styliong the text on the cards*/
+figure.snip1220 h3,
+figure.snip1220 p {
+	line-height: 1.5em;
+}
+figure.snip1220 h3 {
+	margin: 0;
+	font-weight: 800;
+	text-transform: uppercase;
+  color: rgb(216, 133, 24);
+  font-weight: bold;
+}
+figure.snip1220 p {
+	font-size: 0.8em;
+	font-weight: 500;
+	margin: 0 0 15px;
+}
+/*animation effect of the words under the image will turn out when cursors on it*/
+figure.snip1220 figcaption {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	-webkit-transform: rotateX(90deg) translateY(-150%) scale(0.5);
+	transform: rotateX(90deg) translateY(-150%) scale(0.5);
+	z-index: 1;
+	opacity: 0;
+	padding: 0 30px;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+/*hover animation effect : the colour of the buttom changes when cursors on it*/
+figure.snip1220 .read-more {
+	border: 2px solid #ffffff;
+	padding: 0.5em 1em;
+	font-size: 0.8em;
+	text-decoration: none;
+	color: #ffffff;
+	display: inline-block;
+  border-radius: 20px;
+}
+figure.snip1220 .read-more:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+/*animation effect when users hover. the image will flip over and become invisable*/
+figure.snip1220:hover img,
+figure.snip1220.hover img {
+	-webkit-transform: rotateX(-100deg) translateY(50%) scale(0.5);
+	transform: rotateX(-100deg) translateY(50%) scale(0.5);
+	opacity: 0;
+	-webkit-transition-delay: 0;
+	transition-delay: 0;
+}
+figure.snip1220:hover figcaption,
+figure.snip1220.hover figcaption {
+	-webkit-transform: rotateX(0deg) translateY(-50%) scale(1);
+	transform: rotateX(0deg) translateY(-50%) scale(1);
+	opacity: 1;
+	-webkit-transition-delay: 0.5s;
+	transition-delay: 0.5s;
+}
+/*styling the footer by setting height, adding backgrounds and adjusting fontsize*/
+#footer{
+  height: 40%;
+  max-width: 100%;
+  background-image: url(https://raw.githubusercontent.com/pywong715/pywong715.github.io/main/lib2024/qa/final_img/footer.jpg);
+  background-size: cover;
+  padding: 2%;
+}
+#footer p{
+  text-align: center;
+  color: rgb(8, 8, 8);
+  background-color: rgb(233, 192, 146);
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 5px;
+}
+#footer h2{
+  text-align: center;
+  font-family: "Satisfy", serif;
+  margin-bottom: 10px;
+}
+
+/* Responsive styles for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .title h1 {
+    font-size: 36px;
+  }
+  figure.snip1220 h3 {
+    font-size: 0.7em;
+  }
+  figure.snip1220 p {
+    font-size: 0.5em;
+    margin-top: 10px;
+  }
+  figure.snip1220 .read-more {
+    font-size: 0.35em;
+  }
+  #footer {
+    height: 50%;
+  }
+  #footer p {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 10px;
+  }
+  #footer h2 {
+    font-size: 22px;
+  }
+}
+/* Responsive styles for screens with a maximum width of 480px */
+@media (max-width: 480px) {
+  .title h1 {
+    font-size: 30px;
+    }
+    figure.snip1220 h3 {
+ 
+      font-size: 0.6em;
+    }
+    figure.snip1220 p {
+      line-height: 1.1em;
+    }
+    figure.snip1220 p {
+      font-size: 0.5em;
+      margin-top: 10px;
+    }
+    figure.snip1220 .read-more {
+    border: 2px solid #ffffff;
+    margin-top: 10px;
+    font-size: 0.3em;
+    text-align: center;
+  }
+    #footer {
+      height: 50%;
+    }
+    #footer p {
+      margin-left: 15%;
+      margin-right: 15%;
+      font-size: 10px;
+    }
+    #footer h2 {
+      font-size: 20px;
+    }
+  }
+  /* Responsive styles for screens with a maximum width of 320px */
+  @media (max-width: 320px) {
+    .title h1 {
+      font-size: 24px;
+    }
+    figure.snip1220 h3 {
+      font-size: 0.4em;
+    }
+    figure.snip1220 p {
+      font-size: 0.1em;
+    }
+    figure.snip1220 .read-more {
+      font-size: 0.25em;
+    }
+    #footer p {
+      font-size: 8px;
+    }
+    #footer h2 {
+      font-size: 18px;
+    }
+  }
+  
